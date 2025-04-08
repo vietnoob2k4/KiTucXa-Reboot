@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import { useNavigate } from "react-router-dom";
-import "../styles/Dashboard.css";
+// import "../styles/Dashboard.css";
 
 interface Room {
   roomId: string;
@@ -167,7 +167,7 @@ const RoomManagement: React.FC = () => {
   return (
     <div className="room-management-container">
       <div className="header">
-        <h1>Quản lý phòng</h1>
+        <h2>QUẢN LÝ PHÒNG</h2>
         <button className="add-btn" onClick={() => setAddModalVisible(true)}>
           + Thêm phòng mới
         </button>

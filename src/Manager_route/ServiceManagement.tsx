@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Input, Button, Modal, Form, message } from "antd";
 import { EditOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Select } from "antd";
-import "./ServiceManagement.css";
+// import "./ServiceManagement.css";
 
 interface Service {
   key: string;
@@ -162,7 +162,7 @@ const ServiceManagement: React.FC = () => {
             dataIndex: "serviceName",
             key: "serviceName",
           },
-          { title: "Mô tả", dataIndex: "description", key: "description" },
+          // { title: "Mô tả", dataIndex: "description", key: "description" },
           {
             title: "Giá mỗi đơn vị",
             dataIndex: "pricePerUnit",
@@ -208,13 +208,13 @@ const ServiceManagement: React.FC = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
+          {/* <Form.Item
             name="description"
             label="Mô tả"
             rules={[{ required: true, message: "Vui lòng nhập mô tả" }]}
           >
             <Input />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item
             name="pricePerUnit"
             label="Giá mỗi đơn vị"

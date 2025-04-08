@@ -392,19 +392,24 @@ const AccountManagement: React.FC = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item noStyle shouldUpdate={(prev, curr) => prev.roles !== curr.roles}>
-            {({ getFieldValue }) =>
-              getFieldValue("roles") === "STUDENT" ? (
-                <Form.Item
-                  name="maSV"
-                  label="Mã sinh viên"
-                  rules={[{ required: true, message: "Vui lòng nhập mã sinh viên" }]}
-                >
-                  <Input />
-                </Form.Item>
-              ) : null
-            }
-          </Form.Item>
+          <Form.Item
+  name="maSV"
+  label="Mã sinh viên"
+  dependencies={["roles"]}
+  rules={[
+    ({ getFieldValue }) => ({
+      validator(_, value) {
+        if (getFieldValue("roles") !== "STUDENT" || value) {
+          return Promise.resolve();
+        }
+        return Promise.reject(new Error("Vui lòng nhập mã sinh viên"));
+      },
+    }),
+  ]}
+>
+  <Input />
+</Form.Item>
+
 
           <Form.Item name="fullName" label="Họ và tên">
             <Input />

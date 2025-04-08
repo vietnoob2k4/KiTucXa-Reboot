@@ -25,7 +25,7 @@ const GuestDashboard = () => {
           <ul>
             <li onClick={() => setView("dashboard")}>Dashboard</li>
             <li onClick={handleLogout} className="logout-button">
-              🚪 Đăng xuất
+              Đăng xuất
             </li>
           </ul>
         </nav>

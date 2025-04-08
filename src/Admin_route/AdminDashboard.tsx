@@ -34,7 +34,7 @@ const AdminDashboard = () => {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="logo">
-            <span style={{ fontSize: "40px" }}>🏠</span>
+            {/* <span style={{ fontSize: "40px" }}>🏠</span> */}
           </div>
           <h2>Ký túc xá KTX</h2>
           <h1>
@@ -49,7 +49,7 @@ const AdminDashboard = () => {
             <li onClick={() => setView("accountManagement")}>Quản lý tài khoản</li>
             <li onClick={() => setView("userprofile")}>Thông tin cá nhân</li>  {/* Thêm xử lý ở đây */}
             <li onClick={handleLogout} className="logout-button">
-              🚪 Đăng xuất
+            Đăng xuất
             </li>
           </ul>
         </nav>

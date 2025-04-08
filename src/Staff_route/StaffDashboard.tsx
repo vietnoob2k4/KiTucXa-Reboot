@@ -39,7 +39,7 @@ const StaffDashboard = () => {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="logo">
-            <span style={{ fontSize: "40px" }}>🏠</span>
+            {/* <span style={{ fontSize: "40px" }}>🏠</span> */}
           </div>
           <h2>Ký túc xá KTX</h2>
           <h1>

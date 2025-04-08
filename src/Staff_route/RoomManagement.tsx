@@ -72,7 +72,7 @@ const RoomManagement: React.FC = () => {
   return (
     <div className="room-management-container">
       <header className="header">
-        <h1>Quản lý phòng</h1>
+        <h2>QUẢN LÝ PHÒNG</h2>
       </header>
 
       <div className="room-table-container">

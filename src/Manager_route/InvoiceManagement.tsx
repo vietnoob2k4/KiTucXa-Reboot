@@ -598,8 +598,9 @@ const InvoiceManagement: React.FC = () => {
             key: "roomName",
             render: (_: any, record: Invoice) => {
               const relatedContract = contracts.find(
-                (c) => c.id === record.contractId,
+                (c) => c.id.toString() === record.contractId.toString()
               );
+              
               return relatedContract?.roomName || "N/A";
             },
           },
@@ -681,7 +682,7 @@ const InvoiceManagement: React.FC = () => {
           >
             <Input type="number" readOnly />
           </Form.Item>
-          <Form.Item
+          {/* <Form.Item
             label="Ngày thanh toán"
             name="paymentDate"
             rules={[
@@ -714,7 +715,7 @@ const InvoiceManagement: React.FC = () => {
               <Option value="PAID">Đã thanh toán</Option>
               <Option value="UNPAID">Chưa thanh toán</Option>
             </Select>
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item label="Ghi chú" name="note">
             <Input.TextArea />
           </Form.Item>

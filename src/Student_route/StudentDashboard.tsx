@@ -38,7 +38,7 @@ const StudentDashboard = () => {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="logo">
-            <span style={{ fontSize: "40px" }}>🏠</span>
+            {/* <span style={{ fontSize: "40px" }}>🏠</span> */}
           </div>
           <h2>Ký túc xá KTX</h2>
           <h1>
@@ -56,7 +56,7 @@ const StudentDashboard = () => {
             {/* <li onClick={() => setView("payment")}>Thanh toán</li> */}
 
             <li onClick={handleLogout} className="logout-button">
-              🚪 Đăng xuất
+             Đăng xuất
             </li>
           </ul>
         </nav>

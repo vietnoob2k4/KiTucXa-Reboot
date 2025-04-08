@@ -863,43 +863,7 @@ const ContractManagement: React.FC = () => {
           >
             <Input disabled />
           </Form.Item>
-          <Form.Item
-            label="Ngày thanh toán"
-            name="paymentDate"
-            rules={[
-              { required: true, message: "Vui lòng chọn ngày thanh toán" },
-            ]}
-          >
-            <Input type="date" />
-          </Form.Item>
-          <Form.Item
-            label="Phương thức thanh toán"
-            name="paymentMethod"
-            rules={[
-              {
-                required: true,
-                message: "Vui lòng chọn phương thức thanh toán",
-              },
-            ]}
-          >
-            <Select>
-              <Option value="BANK_TRANSFER">Chuyển khoản</Option>
-              <Option value="CASH">Tiền mặt</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
-            label="Trạng thái"
-            name="billStatus"
-            rules={[{ required: true, message: "Vui lòng chọn trạng thái" }]}
-          >
-            <Select>
-              <Option value="PAID">Đã thanh toán</Option>
-              <Option value="UNPAID">Chưa thanh toán</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item label="Ghi chú" name="note">
-            <Input.TextArea />
-          </Form.Item>
+        
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Xác nhận
