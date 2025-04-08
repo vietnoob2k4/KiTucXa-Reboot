@@ -37,7 +37,9 @@ public enum ErrorCode {
     USER_FORBIDDENED(1027,"user account is unaccessible",HttpStatus.BAD_REQUEST),
     USER_HAS_ACTIVE_CONTRACT(1028,"User still has an active contract",HttpStatus.BAD_REQUEST),
     CONTRACT_INACTIVE(1029,"Contract inactive",HttpStatus.BAD_REQUEST),
-    ROOM_FULL(1030,"Room is full can't add student",HttpStatus.BAD_REQUEST);
+    ROOM_FULL(1030,"Room is full can't add student",HttpStatus.BAD_REQUEST),
+    INVALID_CONTRACT_START_DATE(1031,"Ngày bắt đầu hợp đồng phải sau ngày hiện tại.",HttpStatus.BAD_REQUEST),
+    INVALID_CONTRACT_END_DATE(1032,"Ngày kết thúc hợp đồng phải sau ngày bắt đầu.",HttpStatus.BAD_REQUEST);
 
     ErrorCode(int code, String message, HttpStatusCode statusCode){
         this.code = code;

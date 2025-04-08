@@ -38,6 +38,15 @@ public class ContractService {
         Room room = roomRepository.findById(contractDto.getRoomId())
                 .orElseThrow(() -> new AppException(ErrorCode.ROOM_NOT_FOUND));
 
+        // Validate ngày
+        Date now = new Date();
+        if (contractDto.getStartDate().before(now)) {
+            throw new AppException(ErrorCode.INVALID_CONTRACT_START_DATE); // Tạo mã lỗi mới nếu chưa có
+        }
+        if (contractDto.getEndDate().before(contractDto.getStartDate())) {
+            throw new AppException(ErrorCode.INVALID_CONTRACT_END_DATE); // Tạo mã lỗi mới nếu chưa có
+        }
+
         // Kiểm tra xem phòng đã đầy người chưa
         if (room.getCurrentOccupancy() >= room.getMaximumOccupancy()) {
             throw new AppException(ErrorCode.ROOM_FULL);
@@ -48,12 +57,7 @@ public class ContractService {
                 .stream()
                 .filter(c -> {
                     boolean isActive = c.getContractStatus() == ContractStatus.Active;
-                    boolean isNotExpired = c.getEndDate() != null && c.getEndDate().after(new Date());
-                    System.out.println("Contract ID: " + c.getContractId() +
-                            ", Status: " + c.getContractStatus() +
-                            ", EndDate: " + c.getEndDate() +
-                            ", isActive: " + isActive +
-                            ", isNotExpired: " + isNotExpired);
+                    boolean isNotExpired = c.getEndDate() != null && c.getEndDate().after(now);
                     return isActive && isNotExpired;
                 })
                 .collect(Collectors.toList());
@@ -66,17 +70,12 @@ public class ContractService {
         contract.setUser(user);
         contract.setRoom(room);
 
-        // Lưu hợp đồng
         contractRepository.save(contract);
 
-        // Tăng currentOccupancy của phòng lên 1
         room.setCurrentOccupancy(room.getCurrentOccupancy() + 1);
-
-        // Nếu sau khi tăng, currentOccupancy bằng với maximumOccupancy thì cập nhật trạng thái phòng thành FULL
         if (room.getCurrentOccupancy() == room.getMaximumOccupancy()) {
             room.setRoomStatus(RoomStatus.full_room);
         }
-
         roomRepository.save(room);
 
         return contractMapper.toContractResponse(contract);

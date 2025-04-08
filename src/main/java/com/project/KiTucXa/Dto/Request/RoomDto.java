@@ -17,8 +17,8 @@ public class RoomDto {
     String userId;
     @NotNull(message = "Room name is required")
     String roomName;
-    @NotNull(message = "Department is required")
-    String department;
+//    @NotNull(message = "Department is required")
+//    String department;
     @NotNull(message = "Maximum occupancy is required")
     int maximumOccupancy;
     @NotNull(message = "Room type is required")

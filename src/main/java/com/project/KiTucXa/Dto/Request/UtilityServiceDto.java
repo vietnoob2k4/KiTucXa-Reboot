@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 
 public class UtilityServiceDto {
      String serviceName;
-     String description;
+//     String description;
      BigDecimal pricePerUnit;
      String calculationUnit;
      @Enumerated(EnumType.STRING)

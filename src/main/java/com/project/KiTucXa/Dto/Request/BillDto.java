@@ -20,11 +20,11 @@ public class BillDto {
     @NotNull(message = "Contract is required")
     String contractId;
     BigDecimal sumPrice;
-    java.sql.Date paymentDate;
-     @Enumerated(EnumType.STRING)
-     PaymentMethod paymentMethod;
-
-    @Enumerated(EnumType.STRING)
-    BillStatus billStatus;
+//    java.sql.Date paymentDate;
+//     @Enumerated(EnumType.STRING)
+//     PaymentMethod paymentMethod;
+//
+//    @Enumerated(EnumType.STRING)
+//    BillStatus billStatus;
     String note;
 }

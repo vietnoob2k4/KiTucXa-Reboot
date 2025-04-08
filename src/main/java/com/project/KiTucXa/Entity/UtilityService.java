@@ -20,7 +20,7 @@ public class UtilityService extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     String utilityServiceId;
     String serviceName;
-    String description;
+//    String description;
     BigDecimal pricePerUnit;
     String calculationUnit;
     @Enumerated(EnumType.STRING)
